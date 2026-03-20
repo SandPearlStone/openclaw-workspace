@@ -1,0 +1,39 @@
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+cost_monitor.log
+
+# State
+cost_collector_state.json
+cost_monitor.pid
+
+# Data
+usage_log.json
+usage_alerts.json
+anthropic_usage.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride

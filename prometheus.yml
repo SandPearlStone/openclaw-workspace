@@ -1,0 +1,30 @@
+# Prometheus configuration for OpenClaw cost monitoring
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'openclaw-cost-monitor'
+
+# Alertmanager config (optional)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            # - 'localhost:9093'
+
+rule_files:
+  # - 'openclaw_rules.yml'
+
+scrape_configs:
+  # OpenClaw cost metrics
+  - job_name: 'openclaw'
+    static_configs:
+      - targets: ['localhost:9200']
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
